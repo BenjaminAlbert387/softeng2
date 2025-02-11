@@ -1,4 +1,5 @@
-i = 0
-while i <=100:
-    print(i)
-    i = i + 10
+a = 5
+b = 10
+
+c = 5 + 10
+print(c)
