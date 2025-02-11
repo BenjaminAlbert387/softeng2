@@ -1,3 +1,6 @@
+def StudentFunction():
+    student_option = int(input("Please input the student identitfier: "))
+
 def OptionFunction():
     first_option = input("Do you want to access students or modules: ").lower()
     
