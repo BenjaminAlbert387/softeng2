@@ -1,5 +1,16 @@
 def StudentFunction():
     student_option = int(input("Please input the student identitfier: "))
+    open_file = open("demofile.txt", "rt")
+    for line in open_file:
+                if str(student_option) in line.strip():
+                    print("Student found!")
+                    return True
+                
+                else:
+                     print("Student not found")
+                     StudentFunction()
+                StudentFunction()
+
 
 def OptionFunction():
     first_option = input("Do you want to access students or modules: ").lower()
@@ -19,6 +30,3 @@ OptionFunction()
 
 open_file = open("demofile.txt", "rt")
 print(open_file.read())
-
-def StudentFunction():
-    student_option = int(input("Please input the student identitfier: "))
