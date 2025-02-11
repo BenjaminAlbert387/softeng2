@@ -4,7 +4,7 @@
 from validation import is_valid_student_option, read_valid_options
 
 def main():
-    file_path = "demofile2.txt"
+    file_path = "demofile.txt"
     
     # Read the valid student options from the file
     valid_student_options = read_valid_options(file_path)
