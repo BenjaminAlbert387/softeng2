@@ -4,6 +4,7 @@ def OptionFunction():
     if first_option == "students":
         first_option = True
         print("Loading students archive...")
+        StudentFunction()
             
     elif first_option == "modules":
         first_option = True
@@ -15,3 +16,6 @@ OptionFunction()
 
 open_file = open("demofile.txt", "rt")
 print(open_file.read())
+
+def StudentFunction():
+    student_option = int(input("Please input the student identitfier: "))
