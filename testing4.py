@@ -13,3 +13,5 @@ def OptionFunction():
         OptionFunction()    
 OptionFunction()
 
+open_file = open("demofile.txt", "rt")
+print(open_file.read())
