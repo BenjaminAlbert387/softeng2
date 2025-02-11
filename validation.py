@@ -9,11 +9,17 @@ def read_valid_options(file_path):
     """Read the list of valid student options from the file."""
     try:
         with open(file_path, "r") as file:
-            valid_options = ast.literal_eval(file.read().strip())
+            content = file.read()
+            # Extract the student_option list from the content
+            start = content.find("student_option = [")
+            end = content.find("]", start) + 1
+            student_option_list_str = content[start + len("student_option = "):end]
+            valid_options = ast.literal_eval(student_option_list_str.strip())
             return valid_options
     except FileNotFoundError:
         print(f"File '{file_path}' not found.")
         return []
-    except SyntaxError:
+    except (SyntaxError, ValueError):
         print("Error reading file content.")
         return []
+
