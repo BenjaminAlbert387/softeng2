@@ -1,5 +1,5 @@
 def StudentFunction():
-    student_option = (input("Please input the student identitfier: "))
+    student_option = input("Please input the student identitfier: ")
     open_file = open("demofile.txt", "rt")
     #print(open_file.read())
 
@@ -7,6 +7,7 @@ def StudentFunction():
                 if str(student_option) in line.strip():
                     print("Student found!")
                     return True
+                    
                 
                 else:
                      print("Student not found")
