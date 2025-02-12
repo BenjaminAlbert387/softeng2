@@ -11,3 +11,5 @@ p1 = Student("Adam", 1001, 55, 67, 58, 77)
 
 print(p1.module_4)
 
+f = open("demofile.txt", "r")
+print(f.read())
