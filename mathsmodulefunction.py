@@ -17,7 +17,7 @@ def maths_module_function(identifier_check, lns):
         lns_5 = list(map(int, lns_5))
         
         if identifier_check in lns:
-            print("Maths Module: " + str(lns_5[lns.index(identifier_check)]))
+            #print("Maths Module: " + str(lns_5[lns.index(identifier_check)]))
             return str(lns_5[lns.index(identifier_check)])
         else:
             print("Invalid")
