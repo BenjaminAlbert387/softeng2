@@ -1,3 +1,5 @@
+from mathsmodulefunction import maths_module_function
+
 with open('studentid.txt') as file1, \
     open('studentnames.txt') as file2, \
     open('programmingmodule.txt') as file3, \
@@ -23,8 +25,6 @@ with open('studentid.txt') as file1, \
         input("Do you want to search students, modules or averages? ")
     
     first_option = input("Do you want to search students, modules or averages? ")
-    
-from mathsmodulefunction import maths_module_function
 
 if first_option == "students":
     first_option = True
