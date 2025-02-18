@@ -1,7 +1,7 @@
 # testingfileinput.py
 
 # Import the validation functions from validation.py
-from validation import is_valid_student_option, read_valid_options
+from Testing_Folder.validation import is_valid_student_option, read_valid_options
 
 def main():
     file_path = "demofile.txt"

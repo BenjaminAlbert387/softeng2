@@ -7,7 +7,10 @@
 #student_id_list.append(student_identifers.read())
 #print(student_id_list)
 
-with open('studentid.txt') as file1, open('studentnames.txt') as file2, open('programmingmodule.txt') as file3:
+with open('studentid.txt') as file1, \
+    open('studentnames.txt') as file2, \
+    open('programmingmodule.txt') as file3:
+    
     lines = file1.readlines()
     lines_2 = file2.readlines()
     lines_3 = file3.readlines()
