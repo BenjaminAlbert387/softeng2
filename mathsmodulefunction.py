@@ -8,11 +8,19 @@ def student_id_function():
 
         if identifier_check in lns:
             print(identifier_check)
-            return identifier_check
+            return identifier_check, lns
 
-def maths_module_function(identifier_check):
+def maths_module_function(identifier_check, lns):
     with open('ethicsmodule.txt') as file5:
         lines_5 = file5.readlines()
         lns_5 = [line.strip() for line in lines_5]
         lns_5 = list(map(int, lns_5))
-        print("Maths Module: " + str(lns_5[lns_5.index(identifier_check)]))
+        
+        if identifier_check in lns_5:
+            print("Maths Module: " + str(lns_5[lns.index(identifier_check)]))
+        else:
+            print("Student ID not found in the Maths Module.")
+
+identifier_check, lns = student_id_function()
+if identifier_check is not None:
+    maths_module_function(identifier_check, lns)
