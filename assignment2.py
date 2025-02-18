@@ -20,9 +20,9 @@ with open('studentid.txt') as file1, \
 
     def OptionFunction():
         print("Type students, modules or averages.")
-        input("Do you want to search students, modules or averages?")
+        input("Do you want to search students, modules or averages? ")
     
-    first_option = input("Do you want to search students, modules or averages?")
+    first_option = input("Do you want to search students, modules or averages? ")
     
 if first_option == "students":
     first_option = True
