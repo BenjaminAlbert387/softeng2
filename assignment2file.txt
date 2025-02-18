@@ -5,5 +5,3 @@ class Student:
 
 p1 = Student("Alice", 1001)
 
-print(p1.name)
-print(p1.identifier)
