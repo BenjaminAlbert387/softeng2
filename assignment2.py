@@ -25,6 +25,6 @@ with open('studentid.txt') as file1, open('studentnames.txt') as file2, open('pr
     if identifier_check in lns:
         print(identifier_check)
         print("Name: " + lns_2[lns.index(identifier_check)])
-        print("Programming Module: " + lns_3[lns.index(identifier_check)])
+        print("Programming Module: " + str(lns_3[lns.index(identifier_check)]))
     else:
         print("Invalid number")
