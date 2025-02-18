@@ -1,16 +1,7 @@
-#*student_check = input("Please enter the name of the student you want to find: ")
-
-#student_identifers = open("studentid.txt", "r")
-#print(student_identifers.read())
-
-#student_id_list = []
-#student_id_list.append(student_identifers.read())
-#print(student_id_list)
-
 with open('studentid.txt') as file1, \
     open('studentnames.txt') as file2, \
     open('programmingmodule.txt') as file3:
-    
+
     lines = file1.readlines()
     lines_2 = file2.readlines()
     lines_3 = file3.readlines()
@@ -23,6 +14,16 @@ with open('studentid.txt') as file1, \
     lns_2 = list(map(str, lns_2))
     lns_3 = list(map(int, lns_3))
 
+    def OptionFunction():
+        print("Type students, modules or averages.")
+        input("Do you want to search students, modules or averages?")
+    
+    first_option = input("Do you want to search students, modules or averages?")
+    
+if first_option == "students":
+    first_option = True
+    print("Loading students archive...")
+
     identifier_check = int(input("Please enter the ID number of the student you want to find: "))
 
     if identifier_check in lns:
@@ -31,3 +32,7 @@ with open('studentid.txt') as file1, \
         print("Programming Module: " + str(lns_3[lns.index(identifier_check)]))
     else:
         print("Invalid number")
+    
+else:
+    print("Invalid option. Please try again.")
+    OptionFunction()
