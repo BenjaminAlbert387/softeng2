@@ -1,5 +1,7 @@
-
 student_check = input("Please enter the name of the student you want to find: ")
+
+student_identifers = open("studentid.txt", "r")
+print(student_identifers.read())
 
 with open('assignment2file.txt') as f:
     if student_check in f.read():
