@@ -1,7 +1,3 @@
-class Student:
-    def __init__(student, name, identifier):
-        student.name = name
-        student.identifier = identifier
-
-p1 = Student("Alice", 1001)
-
+Alice 1001
+John 1002
+Ben 1003
