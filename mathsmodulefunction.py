@@ -19,7 +19,7 @@ def maths_module_function(identifier_check, lns):
         if identifier_check in lns_5:
             print("Maths Module: " + str(lns_5[lns.index(identifier_check)]))
         else:
-            print("Student ID not found in the Maths Module.")
+            print("Invalid")
 
 identifier_check, lns = student_id_function()
 if identifier_check is not None:
