@@ -24,13 +24,13 @@ with open('studentid.txt') as file1, \
     
     first_option = input("Do you want to search students, modules or averages? ")
     
+from mathsmodulefunction import maths_module_function
+
 if first_option == "students":
     first_option = True
     print("Loading students archive...")
 
     identifier_check = int(input("Please enter the ID number of the student you want to find: "))
-
-    from mathsmodulefunction import maths_module_function
 
     if identifier_check in lns:
         print(identifier_check)
