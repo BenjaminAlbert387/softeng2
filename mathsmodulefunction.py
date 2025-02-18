@@ -10,8 +10,9 @@ def student_id_function():
             print(identifier_check)
             return identifier_check
 
-def maths_module_function():
+def maths_module_function(identifier_check):
     with open('ethicsmodule.txt') as file5:
         lines_5 = file5.readlines()
         lns_5 = [line.strip() for line in lines_5]
         lns_5 = list(map(int, lns_5))
+        print("Maths Module: " + str(lns_5[lns_5.index(identifier_check)]))
