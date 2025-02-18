@@ -11,7 +11,7 @@ with open('studentid.txt') as file1, \
     lns = [line.strip()for line in lines]
     lns_2 = [line.strip() for line in lines_2]
     lns_3 = [line.strip() for line in lines_3]
-    lns_3 = [line.strip() for line in lines_4]
+    lns_4 = [line.strip() for line in lines_4]
 
     lns = list(map(int, lns))
     lns_2 = list(map(str, lns_2))
