@@ -1,3 +1,4 @@
-student_names = ["Alice", "Bob", "Charlie"]
-student_identifier = ["1001", "1002", "1003"]
+Alice
+Bob
+Charlie
 
