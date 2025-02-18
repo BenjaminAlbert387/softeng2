@@ -1,11 +1,9 @@
 student_file = open("assignment2file.txt", "r")
 
-class Student:
-    def __init__(student, name, identifier):
-        student.name = name
-        student.identifier = identifier
+student_check = input("Please enter the name of the student you want to find: ")
 
-p1 = Student("Alice", 1001)
-
-print(p1.name)
-print(student_file.readlines())
+with open('assignment2file.txt') as f:
+    if student_check in f.read():
+        print('Yes, student is there')
+    else:
+        print('No, invalid')
