@@ -3,6 +3,8 @@ def student_id_function():
         lines_1 = file1.readlines()
         lns = [line.strip() for line in lines_1]
         lns = list(map(int, lns))
+        
+        identifier_check = int(input("Please enter the ID number of the student you want to find: "))
 
         if identifier_check in lns:
             print(identifier_check)
