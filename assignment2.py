@@ -30,11 +30,14 @@ if first_option == "students":
 
     identifier_check = int(input("Please enter the ID number of the student you want to find: "))
 
+    from mathsmodulefunction import maths_module_function
+
     if identifier_check in lns:
         print(identifier_check)
         print("Name: " + lns_2[lns.index(identifier_check)])
         print("Programming Module: " + str(lns_3[lns.index(identifier_check)]))
         print("Ethics Module: " + str(lns_4[lns.index(identifier_check)]))
+        maths_module_function(identifier_check, lns)
     else:
         print("Invalid number")
     
