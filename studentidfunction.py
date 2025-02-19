@@ -9,5 +9,3 @@ def student_id_function():
         if identifier_check in lns:
             print(str(identifier_check) + " is a valid ID")
             return identifier_check, lns
-
-student_id_function()

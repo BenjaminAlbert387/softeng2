@@ -1,14 +1,10 @@
-def student_id_function():
-    with open('studentid.txt') as file1:
-        lines_1 = file1.readlines()
-        lns = [line.strip() for line in lines_1]
-        lns = list(map(int, lns))
-        
-        identifier_check = int(input("Please enter the ID number of the student you want to find: "))
+from studentidfunction import student_id_function
 
-        if identifier_check in lns:
-            print(identifier_check)
-            return identifier_check, lns
+def use_id():
+    identifier_check = student_id_function()
+
+if __name__ == "__main__":
+    use_id()
 
 def maths_module_function(identifier_check, lns):
     with open('mathsmodule.txt') as file5:
@@ -23,5 +19,5 @@ def maths_module_function(identifier_check, lns):
             print("Invalid")
 
 identifier_check, lns = student_id_function()
-if identifier_check is not None:
-    maths_module_function(identifier_check, lns)
+#if identifier_check is not None:
+    #maths_module_function(identifier_check, lns)
