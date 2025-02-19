@@ -20,7 +20,7 @@ with open('studentid.txt') as file1, \
     lns_2 = list(map(str, lns_2))
     lns_3 = list(map(int, lns_3))
     lns_4 = list(map(int, lns_4))
-    lns_5 = list(map(int, lns_5))
+    lns_5 = list(map(str, lns_5))
 
     def OptionFunction():
         print("Type students, modules or averages.")
