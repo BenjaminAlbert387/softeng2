@@ -11,7 +11,7 @@ def student_id_function():
             return identifier_check, lns
 
 def maths_module_function(identifier_check, lns):
-    with open('mathssmodule.txt') as file5:
+    with open('mathsmodule.txt') as file5:
         lines_5 = file5.readlines()
         lns_5 = [line.strip() for line in lines_5]
         lns_5 = list(map(int, lns_5))
