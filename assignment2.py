@@ -53,6 +53,8 @@ elif first_option == "modules":
 
     if modules_identifier_check in lns_5:
         print(modules_identifier_check)
+        print("Name: "+ str(lns_2))
+        print("Marks: " + str(lns_3))
     
 else:
     print("Invalid option. Please try again.")
