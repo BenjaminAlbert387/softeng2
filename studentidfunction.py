@@ -7,7 +7,7 @@ def student_id_function():
         identifier_check = int(input("Please enter the ID number of the student you want to find: "))
 
         if identifier_check in lns:
-            print(identifier_check)
+            print(str(identifier_check) + " is a valid ID")
             return identifier_check, lns
 
 student_id_function()
