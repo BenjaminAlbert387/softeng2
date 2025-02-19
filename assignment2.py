@@ -41,6 +41,12 @@ if first_option == "students":
     else:
         print("Invalid number")
     
+elif first_option == "modules":
+    first_option = True
+    print("Loading modules archive...")
+
+    modules_identifier_check = int(input("Please enter the module code you want to find: "))
+    
 else:
     print("Invalid option. Please try again.")
     OptionFunction()
