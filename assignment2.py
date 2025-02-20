@@ -28,8 +28,8 @@ with open('studentid.txt') as file1, \
     
     first_option = input("Do you want to search students, modules or averages? ")
 
-    from studentidfunction import student_id_function
     from mathsmodulefunction import maths_module_function
+    from ethicsmodulefunction import ethics_module_function
 
 if first_option == "students":
     first_option = True
@@ -42,7 +42,7 @@ if first_option == "students":
         print(identifier_check)
         print("Name: " + lns_2[lns.index(identifier_check)])
         print("Programming Module: " + str(lns_3[lns.index(identifier_check)]))
-        print("Ethics Module: " + str(lns_4[lns.index(identifier_check)]))
+        ethics_module_function(identifier_check, lns)
         maths_module_function(identifier_check, lns)
     else:
         print("Invalid number")

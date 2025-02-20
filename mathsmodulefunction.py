@@ -1,7 +1,7 @@
 from studentidfunction import student_id_function
 
 def use_id():
-    identifier_check = student_id_function()
+    identifier_check = student_id_function(lns)
 
 if __name__ == "__main__":
     use_id()
