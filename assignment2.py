@@ -38,6 +38,18 @@ def validate_student_id(student_id, student_ids):
     
     return student_id in student_ids
 
+def validate_module_code(module_code, module_codes):
+    
+# validate_module_code() checks if the provided module code exists in the list of module codes.
+    
+#Parameters:
+#module_code (int): The module code to validate, inputted by the user
+#student_ids (list): List of module codes
+
+#Returns a boolean: True if the module code is valid, False otherwise
+    
+    return module_code in module_codes
+
 def display_student_info(student_id, student_ids, student_names, programming_grades):
     
 # display_student_info() outputs the student's information
@@ -53,6 +65,12 @@ def display_student_info(student_id, student_ids, student_names, programming_gra
     print(f"Name: {student_names[index]}")
     print(f"Programming Module Grade: {programming_grades[index]}")
 
+def display_module_info(module_id, module_ids, student_names):
+    print(f"Called display_module_info with module_id: {module_id}")
+    index = module_ids.index(module_id)
+    print(f"Module code is valid!")
+    print(f"Name: {student_names[index]}" + f"Grade: {module_ids[index]}")
+
 def OptionFunction():
     print("Type students, modules or averages.")
     first_option = input("Do you want to search students, modules or averages? ")    
@@ -60,13 +78,16 @@ def OptionFunction():
     if first_option == "students":
         main()
 
+    elif first_option == "modules":
+        main2()
+
     else:
         print("")
         print("Invalid option. Please try again.")
         OptionFunction()
 
 def main():
-    
+
     student_ids, student_names, programming_grades, module_codes = load_data()
     user_input = int(input("Enter the student ID you wish to search for: "))
     
@@ -76,6 +97,15 @@ def main():
         maths_module_function(user_input, student_ids)
     else:
         print("Invalid student ID")
+
+def main2():
+
+    student_ids, student_names, programming_grades, module_codes = load_data()
+    user_input = int(input("Enter the module ID you wish to search for: "))
+
+    if validate_module_code(user_input, module_codes):
+        display_module_info(user_input, student_names, module_codes)
+
 
 # Runs the OptionFunction() when the program starts
 if __name__ == "__main__":
