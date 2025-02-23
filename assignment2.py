@@ -61,6 +61,7 @@ def OptionFunction():
         main()
 
     else:
+        print("")
         print("Invalid option. Please try again.")
         OptionFunction()
 
@@ -76,5 +77,6 @@ def main():
     else:
         print("Invalid student ID")
 
+# Runs the OptionFunction() when the program starts
 if __name__ == "__main__":
     OptionFunction()
