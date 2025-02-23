@@ -5,10 +5,10 @@ from mathsmodulefunction import maths_module_function
 # load_function() loads data from a file and convert each line to a string datatype
 
 #Parameters:
-#file_path (str): Path to the file
+#file_path (str): Path to the file, for example studentid.txt
 #datatype (type): Type to which each line should be converted
 
-#Returns a list of converted lines from the file
+#Returns a list of converted lines from the file as strings
 
 def load_file(file_path, datatype=str):
     with open(file_path) as file:
