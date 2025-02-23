@@ -66,7 +66,7 @@ def display_student_info(student_id, student_ids, student_names, programming_gra
     print(f"Programming Module Grade: {programming_grades[index]}")
 
 def display_module_info(module_id, module_ids, student_names):
-    
+
     print(f"Called display_module_info with module_id: {module_id}")
     index = module_ids.index(module_id)
     print(f"Module code is valid!")
@@ -92,7 +92,7 @@ def main():
     student_ids, student_names, programming_grades, module_codes = load_data()
     user_input = int(input("Enter the student ID you wish to search for: "))
     
-    if validate_student_id(user_input, student_ids):
+    if validate_student_id(user_input, student_ids) == True:
         display_student_info(user_input, student_ids, student_names, programming_grades)
         ethics_module_function(user_input, student_ids)
         maths_module_function(user_input, student_ids)
