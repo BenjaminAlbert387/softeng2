@@ -55,9 +55,7 @@ def display_student_info(student_id, student_ids, student_names, programming_gra
 
 def OptionFunction():
     print("Type students, modules or averages.")
-    input("Do you want to search students, modules or averages? ")
-    
-    first_option = input("Do you want to search students, modules or averages? ")
+    first_option = input("Do you want to search students, modules or averages? ")    
 
     if first_option == "students":
         main()
@@ -69,7 +67,7 @@ def OptionFunction():
 def main():
     
     student_ids, student_names, programming_grades, module_codes = load_data()
-    user_input = int(input("Enter your student ID: "))
+    user_input = int(input("Enter the student ID you wish to search for: "))
     
     if validate_student_id(user_input, student_ids):
         display_student_info(user_input, student_ids, student_names, programming_grades)
@@ -77,5 +75,6 @@ def main():
         maths_module_function(user_input, student_ids)
     else:
         print("Invalid student ID")
-        main()
 
+if __name__ == "__main__":
+    OptionFunction()
