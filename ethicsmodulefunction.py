@@ -1,11 +1,3 @@
-from studentidfunction import student_id_function
-
-def use_id():
-    identifier_check = student_id_function()
-
-if __name__ == "__main__":
-    use_id()
-
 def ethics_module_function(identifier_check, lns):
     with open('ethicsmodule.txt') as file4:
         lines_4 = file4.readlines()
@@ -18,4 +10,4 @@ def ethics_module_function(identifier_check, lns):
         else:
             print("Invalid")
 
-identifier_check, lns = student_id_function()
+#identifier_check, lns = student_id_function()

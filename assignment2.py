@@ -1,59 +1,69 @@
-with open('studentid.txt') as file1, \
-    open('studentnames.txt') as file2, \
-    open('programmingmodule.txt') as file3, \
-    open('modulecode.txt') as file5:
+# Import necessary functions from other files
+from ethicsmodulefunction import ethics_module_function
+from mathsmodulefunction import maths_module_function
 
-    lines = file1.readlines()
-    lines_2 = file2.readlines()
-    lines_3 = file3.readlines()
-    lines_5 = file5.readlines()
+# load_function() loads data from a file and convert each line to a string datatype
 
-    lns = [line.strip()for line in lines]
-    lns_2 = [line.strip() for line in lines_2]
-    lns_3 = [line.strip() for line in lines_3]
-    lns_5 = [line.strip() for line in lines_5]
+#Parameters:
+#file_path (str): Path to the file
+#datatype (type): Type to which each line should be converted
 
-    lns = list(map(int, lns))
-    lns_2 = list(map(str, lns_2))
-    lns_3 = list(map(int, lns_3))
-    lns_5 = list(map(str, lns_5))
+#Returns a list of converted lines from the file
 
-    def OptionFunction():
-        print("Type students, modules or averages.")
-        input("Do you want to search students, modules or averages? ")
+def load_file(file_path, datatype=str):
+    with open(file_path) as file:
+        return [datatype(line.strip()) for line in file.readlines()]
+
+def load_data():
+
+# load_data() loads data from multiple files
+
+#Returns a tuple: Contains lists of student IDs, student names and grades for each module
+
+    student_ids = load_file('studentid.txt', int)
+    student_names = load_file('studentnames.txt')
+    programming_grades = load_file('programmingmodule.txt', int)
+    module_codes = load_file('modulecode.txt')
+    return student_ids, student_names, programming_grades, module_codes
+
+def validate_student_id(student_id, student_ids):
     
-    first_option = input("Do you want to search students, modules or averages? ")
+# validate_student_id() checks if the provided student ID exists in the list of student IDs.
+    
+#Parameters:
+#student_id (int): The student ID to validate
+#student_ids (list): List of valid student IDs
 
-    from mathsmodulefunction import maths_module_function
-    from ethicsmodulefunction import ethics_module_function
+#Returns a boolean: True if the student ID is valid, False otherwise
+    
+    return student_id in student_ids
 
-if first_option == "students":
-    first_option = True
-    print("Loading students archive...")
+def display_student_info(student_id, student_ids, student_names, programming_grades):
+    
+# display_student_info() outputs the student's information
 
-    identifier_check = int(input("Please enter the ID number of the student you want to find: "))
-    #identifier_check = student_id_function()
+#Parameters:
+#student_id (int): The student ID to display information for
+#student_ids (list): List of student IDs
+#student_names (list): List of student names corresponding to the student IDs
+#programming_grades (list): List of programming module grades corresponding to the student IDs
+    
+    index = student_ids.index(student_id)
+    print(f"Student ID: {student_id}")
+    print(f"Name: {student_names[index]}")
+    print(f"Programming Module Grade: {programming_grades[index]}")
 
-    if identifier_check in lns:
-        print(identifier_check)
-        print("Name: " + lns_2[lns.index(identifier_check)])
-        print("Programming Module: " + str(lns_3[lns.index(identifier_check)]))
-        ethics_module_function(identifier_check, lns)
-        maths_module_function(identifier_check, lns)
+def main():
+    
+    student_ids, student_names, programming_grades, module_codes = load_data()
+    user_input = int(input("Enter your student ID: "))
+    
+    if validate_student_id(user_input, student_ids):
+        display_student_info(user_input, student_ids, student_names, programming_grades)
+        ethics_module_function(user_input, student_ids)
+        maths_module_function(user_input, student_ids)
     else:
-        print("Invalid number")
-    
-elif first_option == "modules":
-    first_option = True
-    print("Loading modules archive...")
+        print("Invalid student ID")
 
-    modules_identifier_check = input("Please enter the module code you want to find: ")
-
-    if modules_identifier_check in lns_5:
-        print(modules_identifier_check)
-        print("Name: "+ str(lns_2))
-        print("Marks: " + str(lns_3))
-    
-else:
-    print("Invalid option. Please try again.")
-    OptionFunction()
+if __name__ == "__main__":
+    main()
