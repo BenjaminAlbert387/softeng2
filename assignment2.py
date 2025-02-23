@@ -49,7 +49,7 @@ def display_student_info(student_id, student_ids, student_names, programming_gra
 #programming_grades (list): List of programming module grades corresponding to the student IDs
     
     index = student_ids.index(student_id)
-    print(f"Student ID: {student_id}")
+    print(f"Student ID is valid!")
     print(f"Name: {student_names[index]}")
     print(f"Programming Module Grade: {programming_grades[index]}")
 
