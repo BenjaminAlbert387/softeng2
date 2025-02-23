@@ -66,6 +66,7 @@ def display_student_info(student_id, student_ids, student_names, programming_gra
     print(f"Programming Module Grade: {programming_grades[index]}")
 
 def display_module_info(module_id, module_ids, student_names):
+    
     print(f"Called display_module_info with module_id: {module_id}")
     index = module_ids.index(module_id)
     print(f"Module code is valid!")
@@ -98,6 +99,7 @@ def main():
     else:
         print("Invalid student ID")
 
+# This function doesn't work as intended yet
 def main2():
 
     student_ids, student_names, programming_grades, module_codes = load_data()
