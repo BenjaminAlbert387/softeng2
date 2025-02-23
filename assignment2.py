@@ -53,6 +53,19 @@ def display_student_info(student_id, student_ids, student_names, programming_gra
     print(f"Name: {student_names[index]}")
     print(f"Programming Module Grade: {programming_grades[index]}")
 
+def OptionFunction():
+    print("Type students, modules or averages.")
+    input("Do you want to search students, modules or averages? ")
+    
+    first_option = input("Do you want to search students, modules or averages? ")
+
+    if first_option == "students":
+        main()
+
+    else:
+        print("Invalid option. Please try again.")
+        OptionFunction()
+
 def main():
     
     student_ids, student_names, programming_grades, module_codes = load_data()
@@ -64,6 +77,5 @@ def main():
         maths_module_function(user_input, student_ids)
     else:
         print("Invalid student ID")
+        main()
 
-if __name__ == "__main__":
-    main()
