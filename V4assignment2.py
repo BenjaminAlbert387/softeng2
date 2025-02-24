@@ -131,5 +131,6 @@ def main2():
         print(f"Could not find modules with module code {module_code}")
         main2()
 
+# Runs the OptionFunction() when the program starts 
 if __name__ == "__main__":
     OptionFunction()
