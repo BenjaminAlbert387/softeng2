@@ -6,8 +6,8 @@ def OptionFunction():
 
     if first_option == "students":
         main()
-    # elif first_option == "modules":
-    #     main2()
+    #elif first_option == "modules":
+    #    main2()
     else:
         print("")
         print("Invalid option. Please try again.")
@@ -49,6 +49,8 @@ def main():
         if not found:
             print("Invalid ID! Please try again.")
             main()
+            
+
 
 if __name__ == "__main__":
     OptionFunction()
