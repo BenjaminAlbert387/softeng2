@@ -58,6 +58,29 @@ def main2():
             self.student_name = student_name
             self.grades = grades
 
+            def create_module(row):
+                module_id = row[0]
+                module_name = row[1]
+                student_name = row[2]
+                grades = row[3]
+                return Module(module_id, module_name, student_name, grades)
+            
+            def display_module(module):
+                print(f"Module ID: {module.id}")
+                print(f"Module Name: {module.name}")
+                print(f"Students registered: {student_name}")
+                print(f"Grades: {grades}")
+
+            user_input = input("Enter the module code: ")
+            reader = csv.reader(modules.csv)
+            next(reader, None)
+            for row in reader:
+                    if row[0] == user_input:
+                        Module = create_module(row)
+                        display_module(Module)
+                        return
+            print("Student not found.")
+
 
 if __name__ == "__main__":
     OptionFunction()
