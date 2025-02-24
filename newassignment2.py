@@ -73,7 +73,7 @@ def main2():
 
             user_input = input("Enter the module code: ")
             with open('modules.csv', newline='', mode='r') as csvfile:
-                reader = csv.reader(modules.csv)
+                reader = csv.reader(csvfile)
             next(reader, None)
             for row in reader:
                     if row[0] == user_input:
