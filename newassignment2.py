@@ -50,6 +50,13 @@ def main():
             print("Invalid ID! Please try again.")
             main()
             
+def main2():
+    class Module:
+        def __init__(self, module_id, module_name, student_name, grades):
+            self.module_id = module_id
+            self.module_name = module_name
+            self.student_name = student_name
+            self.grades = grades
 
 
 if __name__ == "__main__":
