@@ -49,8 +49,6 @@ def main():
         if not found:
             print("Invalid ID! Please try again.")
             main()
-            
-import csv
 
 def main2():
     class Module:
