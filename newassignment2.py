@@ -21,12 +21,33 @@ def main():
     with open('students.csv', newline='', mode='r') as csvfile:
         reader = csv.reader(csvfile)
         next(reader, None)
+
         for row in reader:
             if row[0] == user_input:
                 print(row)
-            else:
-                print("Invalid ID!")
-                main()
+                print(f"Name: {row[1]}")
+
+                print(f"Registered for programming module? {row[2]}")
+                if row[2] == 'yes':
+                    print(f"Programming grade: {row[3]}")
+                else:
+                    print("")
+
+                print(f"Registered for ethics module? {row[4]}")
+                if row[4] == 'yes':
+                    print(f"Programming grade: {row[5]}")
+                else:
+                    print("")
+
+                print(f"Registered for maths module? {row[6]}")
+                if row[6] == 'yes':
+                    print(f"Programming grade: {row[7]}")
+                else:
+                    print("")
+
+        else:
+            print("Invalid ID!")
+            main()
 
 # Runs the OptionFunction() when the program starts
 if __name__ == "__main__":
