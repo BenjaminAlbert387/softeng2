@@ -1,2 +1,4 @@
-userid, does_programming, programming_grade, does_ethics, ethics_grade, does_maths, maths_grade
-1001, yes, 81, yes, 56, no, 
+userid, name, does_programming, programming_grade, does_ethics, ethics_grade, does_maths, maths_grade
+1001,Alice,yes,74,yes,85,yes,66
+1002,Bob,yes,45,yes,49,yes,51
+1003,Charlie,yes,51,yes,70,yes,40  
