@@ -72,7 +72,8 @@ def main2():
                 print(f"Grades: {grades}")
 
             user_input = input("Enter the module code: ")
-            reader = csv.reader(modules.csv)
+            with open('modules.csv', newline='', mode='r') as csvfile:
+                reader = csv.reader(modules.csv)
             next(reader, None)
             for row in reader:
                     if row[0] == user_input:
