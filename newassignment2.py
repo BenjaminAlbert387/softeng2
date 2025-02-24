@@ -81,6 +81,7 @@ def main2():
                 display_module(module)
                 return
     print("Module not found.")
+    main2()
 
 if __name__ == "__main__":
     OptionFunction()
