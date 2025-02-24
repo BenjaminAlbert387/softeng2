@@ -17,6 +17,12 @@ def OptionFunction():
 def main():
     user_input = input("Enter the student ID you wish to search for: ")
 
+    # open() opens the CSV file to be used
+
+    #Parameters:
+    # newline='': Matches the same format as the CSV file
+    # mode='r': File is read only
+
     with open('students.csv', newline='', mode='r') as csvfile:
         reader = csv.reader(csvfile)
         next(reader, None)  # Skips the header row of the CSV file
@@ -53,18 +59,31 @@ def main():
 
 def main2():
     class StudentModuleFilter:
+
+        # __init__() is used to initalise a class
+
+        #Parameters:
+        # self: The first instance of the class
+        # csv_file: The students_csv file 
+
         def __init__(self, csv_file):
             # Initialize the class with the CSV file and read it into a DataFrame
             self.df = pd.read_csv(csv_file)
-            # Remove leading/trailing spaces from column names
+            # Remove white space from column names
             self.df.columns = self.df.columns.str.strip()
 
+        #Function:
+        # find_module_columns(): Used to verify whether the user input matches and is valid
+
+        #Parameters:
+        # self: The first instance of the class
+        # module_code: The user input
+
+        #Returns:
+        # does_column: Tuple containing any columns that begin with does_
+        # _grade column: Tuple containing any columns that contain _grade
+
         def find_module_columns(self, module_code):
-            """
-            Find the columns corresponding to the given module code.
-            :param module_code: The module code to look for (e.g., 19901)
-            :return: Tuple containing the names of the does_ and _grade columns
-            """
             does_column = None
             grade_column = None
             # Iterate over the column names to find matching ones
@@ -75,17 +94,18 @@ def main2():
                     elif '_grade' in column:
                         grade_column = column
             return does_column, grade_column
+        
+        #Function:
+        # filter_students(): Filters students based on the module code inputted
+
+        #Parameter: 
+        # module_code: The module code to filter by
+
+        #Returns: 
+        # DataFrame with filtered students' details if the input matches
+        # None if the user input doesn't match
 
         def filter_students(self, module_code):
-            
-            #Filters students based on the specified module code inputted and return their details
-
-            #Parameter: 
-            # module_code: The module code to filter by (e.g., 19901)
-
-            #Returns: 
-            # DataFrame with filtered students' details or None if columns not found
-            
             # Find the appropriate columns for the module
             does_column, grade_column = self.find_module_columns(module_code)
             if does_column and grade_column == True:
@@ -108,7 +128,7 @@ def main2():
         # Output the filtered students with Name, ID, and Grade
         print(filtered_students)
     else:
-        print(f"Could not find columns for module code {module_code}")
+        print(f"Could not find modules with module code {module_code}")
         main2()
 
 if __name__ == "__main__":
