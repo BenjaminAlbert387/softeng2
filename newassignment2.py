@@ -6,8 +6,8 @@ def OptionFunction():
 
     if first_option == "students":
         main()
-    #elif first_option == "modules":
-    #    main2()
+    elif first_option == "modules":
+        main2()
     else:
         print("")
         print("Invalid option. Please try again.")
@@ -50,6 +50,8 @@ def main():
             print("Invalid ID! Please try again.")
             main()
             
+import csv
+
 def main2():
     class Module:
         def __init__(self, module_id, module_name, student_name, grades):
@@ -58,30 +60,29 @@ def main2():
             self.student_name = student_name
             self.grades = grades
 
-            def create_module(row):
-                module_id = row[0]
-                module_name = row[1]
-                student_name = row[2]
-                grades = row[3]
-                return Module(module_id, module_name, student_name, grades)
-            
-            def display_module(module):
-                print(f"Module ID: {module.id}")
-                print(f"Module Name: {module.name}")
-                print(f"Students registered: {student_name}")
-                print(f"Grades: {grades}")
+    def create_module(row):
+        module_id = row[0]
+        module_name = row[1]
+        student_name = row[2]
+        grades = row[3]
+        return Module(module_id, module_name, student_name, grades)
+    
+    def display_module(module):
+        print(f"Module ID: {module.module_id}")
+        print(f"Module Name: {module.module_name}")
+        print(f"Students registered: {module.student_name}")
+        print(f"Grades: {module.grades}")
 
-            user_input = input("Enter the module code: ")
-            with open('modules.csv', newline='', mode='r') as csvfile:
-                reader = csv.reader(csvfile)
-            next(reader, None)
-            for row in reader:
-                    if row[0] == user_input:
-                        Module = create_module(row)
-                        display_module(Module)
-                        return
-            print("Student not found.")
-
+    user_input = input("Enter the module code: ")
+    with open('modules.csv', newline='', mode='r') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader, None)
+        for row in reader:
+            if row[0] == user_input:
+                module = create_module(row)
+                display_module(module)
+                return
+    print("Module not found.")
 
 if __name__ == "__main__":
     OptionFunction()
