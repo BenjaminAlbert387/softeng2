@@ -18,7 +18,7 @@ def main():
 
     with open('students.csv', newline='', mode='r') as csvfile:
         reader = csv.reader(csvfile)
-        next(reader, None)  # Skip the header row
+        next(reader, None)  # Skips the header row of the CSV file
 
         found = False  # Flag to check if the ID was found
         for row in reader:
