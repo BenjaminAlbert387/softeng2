@@ -1,4 +1,4 @@
-# Import necessary functions from other files
+# Imports functions from other files
 from ethicsmodulefunction import ethics_module_function
 from mathsmodulefunction import maths_module_function
 
@@ -65,13 +65,6 @@ def display_student_info(student_id, student_ids, student_names, programming_gra
     print(f"Name: {student_names[index]}")
     print(f"Programming Module Grade: {programming_grades[index]}")
 
-def display_module_info(module_id, module_ids, student_names):
-
-    print(f"Called display_module_info with module_id: {module_id}")
-    index = module_ids.index(module_id)
-    print(f"Module code is valid!")
-    print(f"Name: {student_names[index]}" + f"Grade: {module_ids[index]}")
-
 def OptionFunction():
     print("Type students, modules or averages.")
     first_option = input("Do you want to search students, modules or averages? ")    
@@ -105,8 +98,9 @@ def main2():
     student_ids, student_names, programming_grades, module_codes = load_data()
     user_input = int(input("Enter the module ID you wish to search for: "))
 
-    if validate_module_code(user_input, module_codes):
-        display_module_info(user_input, student_names, module_codes)
+    if validate_module_code(user_input, module_codes) == True:
+        print("Module code is valid!")
+        
 
 
 # Runs the OptionFunction() when the program starts
