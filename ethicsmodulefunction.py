@@ -9,5 +9,3 @@ def ethics_module_function(identifier_check, lns):
             return str(lns_4[lns.index(identifier_check)])
         else:
             print("Invalid")
-
-#identifier_check, lns = student_id_function()

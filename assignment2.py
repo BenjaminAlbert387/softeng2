@@ -96,10 +96,7 @@ def main():
 def main2():
 
     student_ids, student_names, programming_grades, module_codes = load_data()
-    user_input = int(input("Enter the module ID you wish to search for: "))
-
-    if validate_module_code(user_input, module_codes) == True:
-        print("Module code is valid!")
+    module_selection = int(input("Type a number "))
         
 
 
