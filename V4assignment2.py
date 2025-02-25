@@ -119,6 +119,7 @@ def main2():
             does_column, grade_column = self.find_module_columns(module_code)
             if does_column and grade_column:
                 # Filter the DataFrame to include only students taking the specified module
+                # If the row contains yes, then copy the user ID, name and grade to the class
                 filtered_students = self.df[self.df[does_column] == 'yes'][['userid', 'name', grade_column]].copy()
                 return filtered_students
             else:
@@ -181,8 +182,7 @@ def main4():
 
     print("Averages for each module: ")
 
-    # Removes the 'dtype: float64' from the output
-    #(warkitty, 2019)
+    # Removes the 'dtype: float64' from the output (warkitty, 2019)
     print(column_averages.to_string())
 
 # Runs the OptionFunction() when the program starts 
