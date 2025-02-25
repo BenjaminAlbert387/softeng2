@@ -109,7 +109,7 @@ def main2():
         # module_code: The module code to filter by
 
         #Returns: 
-        # DataFrame with filtered students' details if the input matches
+        # DataFrame with filtered students' details if the user input matches
         # None if the user input doesn't match
 
         def filter_students(self, module_code):
