@@ -2,4 +2,4 @@ userid,name,does_programming(19901),programming_grade(19901),does_ET(19902),ET_g
 1001,Alice,yes,74,yes,85,yes,66,no,,
 1002,Bob,yes,45,no,,yes,51,yes,69
 1003,Charlie,yes,51,yes,70,no,,yes,65
-1004,Dave,no,,yes,62,yes,47,yes,50  
+1004,Dave,no,,yes,62,yes,47,yes,50
