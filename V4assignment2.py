@@ -154,14 +154,30 @@ def OptionTwoFunction():
         OptionTwoFunction()
 
 def main3():
-    print("hi")
+    # Reads in the CSV file, only using columns with grades
+    df = pd.read_csv('students.csv',usecols=[3, 5, 7, 9])
+
+    # Reads in the CSV file, only uses the column with student names
+    df2 = pd.read_csv('students.csv', usecols=[1])
+
+    # Calculates the mean of selected rows
+    row_averages = df.mean(axis=1)
+
+    print("Averages for each student: ")
+
+    # Concatonates the DataFrame and Series together    
+    df3 = pd.concat([df2, row_averages], axis=1)
+
+    # Removes the 'dtype: float64' from the output (warkitty, 2019)
+    # Also removes the header from the the output (BioData41, 2022)
+    print(df3.to_string(header=False))
 
 def main4():
     # Reads in the CSV file, only using columns with grades
     df = pd.read_csv('students.csv',usecols=[3, 5, 7, 9])
 
     # Calculates the mean of selected columns
-    column_averages = df.mean()
+    column_averages = df.mean(axis=0)
 
     print("Averages for each module: ")
 
