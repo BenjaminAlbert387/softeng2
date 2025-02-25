@@ -10,7 +10,7 @@ def OptionFunction():
     elif first_option == "modules":
         main2()
     elif first_option == "averages":
-        main3()
+        OptionTwoFunction()
     else:
         print("")
         print("Invalid option. Please try again.")
@@ -142,7 +142,7 @@ def main2():
 
 def OptionTwoFunction():
     print("Type students or modules")
-    second_option = input("Do you want the average of all students or all modules?")
+    second_option = input("Do you want the average of all students or all modules? ")
 
     if second_option == "students":
         main3()
@@ -157,10 +157,13 @@ def main3():
     print("hi")
 
 def main4():
+    # Reads in the CSV file, only using columns with grades
     df = pd.read_csv('students.csv',usecols=[3, 5, 7, 9])
+    # Calculates the mean of selected columns
     column_averages = df.mean()
     print("Averages for each module: ")
-    print(column_averages)
+    # Removes the 'dtype: float64' from the output
+    print(column_averages.to_string())
 
 
 # Runs the OptionFunction() when the program starts 
