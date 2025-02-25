@@ -116,7 +116,6 @@ def main2():
             # Find the appropriate columns for the module
             does_column, grade_column = self.find_module_columns(module_code)
             if does_column and grade_column:
-                print(self.df)
                 # Filter the DataFrame to include only students taking the specified module
                 filtered_students = self.df[self.df[does_column] == 'yes'][['userid', 'name', grade_column]].copy()
                 return filtered_students
