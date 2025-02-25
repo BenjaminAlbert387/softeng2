@@ -166,6 +166,7 @@ def main4():
     print("Averages for each module: ")
 
     # Removes the 'dtype: float64' from the output
+    #(warkitty, 2019)
     print(column_averages.to_string())
 
 # Runs the OptionFunction() when the program starts 
