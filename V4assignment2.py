@@ -32,7 +32,7 @@ def main():
             if row[0] == user_input:
                 print(row)
                 print(f"Name: {row[1]}")
-                
+
                 print(f"Registered for programming module? {row[2]}")
                 if row[2] == 'yes':
                     print(f"Programming grade: {row[3]}")
@@ -51,9 +51,9 @@ def main():
                 else:
                     print("")
 
-                print(f"Registered for Computer Systems module? {row[7]}")
-                if row[7] == 'yes':
-                    print(f"Computer Systems grade: {row[8]}")
+                print(f"Registered for Computer Systems module? {row[8]}")
+                if row[8] == 'yes':
+                    print(f"Computer Systems grade: {row[9]}")
                 else:
                     print("")
 
