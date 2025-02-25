@@ -9,6 +9,8 @@ def OptionFunction():
         main()
     elif first_option == "modules":
         main2()
+    elif first_option == "averages":
+        main3()
     else:
         print("")
         print("Invalid option. Please try again.")
@@ -137,6 +139,29 @@ def main2():
     else:
         print(f"Could not find modules with module code {module_code}")
         main2()
+
+def OptionTwoFunction():
+    print("Type students or modules")
+    second_option = input("Do you want the average of all students or all modules?")
+
+    if second_option == "students":
+        main3()
+    elif second_option == "modules":
+        main4()
+    else:
+        print("")
+        print("Invalid option. Please try again.")
+        OptionTwoFunction()
+
+def main3():
+    print("hi")
+
+def main4():
+    df = pd.read_csv('students.csv',usecols=[3, 5, 7, 9])
+    column_averages = df.mean()
+    print("Averages for each module: ")
+    print(column_averages)
+
 
 # Runs the OptionFunction() when the program starts 
 if __name__ == "__main__":
