@@ -125,7 +125,7 @@ def main2():
                 return None
 
     csv_file = 'students.csv'
-    module_code = input("Enter the module code (e.g., 19901): ")
+    module_code = input("Enter the module code: ")
 
     # Create an instance of the StudentModuleFilter class
     filter = StudentModuleFilter(csv_file)
@@ -141,7 +141,7 @@ def main2():
         main2()
 
 def OptionTwoFunction():
-    print("Type students or modules")
+    print("Type students or modules.")
     second_option = input("Do you want the average of all students or all modules? ")
 
     if second_option == "students":
@@ -159,12 +159,14 @@ def main3():
 def main4():
     # Reads in the CSV file, only using columns with grades
     df = pd.read_csv('students.csv',usecols=[3, 5, 7, 9])
+
     # Calculates the mean of selected columns
     column_averages = df.mean()
+
     print("Averages for each module: ")
+
     # Removes the 'dtype: float64' from the output
     print(column_averages.to_string())
-
 
 # Runs the OptionFunction() when the program starts 
 if __name__ == "__main__":
