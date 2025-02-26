@@ -18,10 +18,13 @@ def OptionFunction():
 
 def ReturnFunction():
     print("Typing no will return you back to the menu")
-    return_user_input = input("Do you want to find another student? ").lower()
+    return_user_input = input("Do you want to find another student? Or module? ").lower()
 
-    if return_user_input == "yes":
+    if return_user_input == "student":
         SearchStudentFunction()
+    
+    elif return_user_input == "module":
+        SearchModuleFunction()
 
     elif return_user_input == "no":
         OptionFunction()
@@ -154,6 +157,7 @@ def SearchModuleFunction():
     if filtered_students is not None:
         # Output the filtered students with Name, ID, and Grade
         print(filtered_students)
+        ReturnFunction()
     else:
         print(f"Could not find modules with module code {module_code}")
         SearchModuleFunction()
