@@ -44,6 +44,7 @@ def SearchStudentFunction():
         next(reader, None)  # Skips the header row of the CSV file
 
         found = False  # Flag to check if the ID was found
+
         for row in reader:
             if row[0] == user_input:
                 print(row)
