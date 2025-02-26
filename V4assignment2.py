@@ -6,9 +6,9 @@ def OptionFunction():
     first_option = input("Do you want to search students, modules or averages? ")
 
     if first_option == "students":
-        main()
+        SearchStudentFunction()
     elif first_option == "modules":
-        main2()
+        SearchModuleFunction()
     elif first_option == "averages":
         OptionTwoFunction()
     else:
