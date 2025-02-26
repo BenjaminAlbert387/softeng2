@@ -1,8 +1,9 @@
 import csv
 import pandas as pd
+import sys
 
 def OptionFunction():
-    print("Type students, modules or averages.")
+    print("Type students, modules or averages. Type quit to end the program.")
     first_option = input("Do you want to search students, modules or averages? ").lower()
 
     if first_option == "students":
@@ -11,6 +12,8 @@ def OptionFunction():
         SearchModuleFunction()
     elif first_option == "averages":
         OptionTwoFunction()
+    elif first_option == "quit":
+        sys.exit()
     else:
         print("")
         print("Invalid option. Please try again.")
