@@ -16,6 +16,20 @@ def OptionFunction():
         print("Invalid option. Please try again.")
         OptionFunction()
 
+def ReturnFunction():
+    print("Typing no will return you back to the menu")
+    return_user_input = input("Do you want to find another student? ").lower()
+
+    if return_user_input == "yes":
+        SearchStudentFunction()
+
+    elif return_user_input == "no":
+        OptionFunction()
+
+    else:
+        print("Invalid option, try again")
+        ReturnFunction()
+
 def SearchStudentFunction():
     user_input = input("Enter the student ID you wish to search for: ")
 
@@ -60,25 +74,13 @@ def SearchStudentFunction():
                     print("")
 
                 found = True  # Set flag to true when ID is found
+                ReturnFunction()
                 break
             
-            def ReturnFunction():
-                print("Typing no will return you back to the menu")
-                return_user_input = input("Do you want to find another student? ").tolower()
 
-                if return_user_input == "yes":
-                    SearchStudentFunction()
-
-                elif return_user_input == "no":
-                    OptionFunction()
-
-                else:
-                    print("Invalid option, try again")
-                    ReturnFunction()
-
-        if not found:
-            print("Invalid ID! Please try again.")
-            SearchStudentFunction()
+            if not found:
+                print("Invalid ID! Please try again.")
+                SearchStudentFunction()
 
 def SearchModuleFunction():
     class StudentModuleFilter:
