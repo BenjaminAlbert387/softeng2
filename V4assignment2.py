@@ -61,6 +61,20 @@ def SearchStudentFunction():
 
                 found = True  # Set flag to true when ID is found
                 break
+            
+            def ReturnFunction():
+                print("Typing no will return you back to the menu")
+                return_user_input = input("Do you want to find another student? ").tolower()
+
+                if return_user_input == "yes":
+                    SearchStudentFunction()
+
+                elif return_user_input == "no":
+                    OptionFunction()
+
+                else:
+                    print("Invalid option, try again")
+                    ReturnFunction()
 
         if not found:
             print("Invalid ID! Please try again.")
