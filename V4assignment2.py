@@ -3,7 +3,7 @@ import pandas as pd
 
 def OptionFunction():
     print("Type students, modules or averages.")
-    first_option = input("Do you want to search students, modules or averages? ")
+    first_option = input("Do you want to search students, modules or averages? ").lower()
 
     if first_option == "students":
         SearchStudentFunction()
@@ -143,7 +143,7 @@ def SearchModuleFunction():
 
 def OptionTwoFunction():
     print("Type students or modules.")
-    second_option = input("Do you want the average of all students or all modules? ")
+    second_option = input("Do you want the average of all students or all modules? ").lower()
 
     if second_option == "students":
         StudentAveragesFunction()
