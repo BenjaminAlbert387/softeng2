@@ -158,8 +158,8 @@ def StudentAveragesFunction():
     # Reads in the CSV file, only using columns with grades
     df = pd.read_csv('students.csv',usecols=[3, 5, 7, 9])
 
-    # Reads in the CSV file, only uses the column with student names
-    df2 = pd.read_csv('students.csv', usecols=[1])
+    # Reads in the CSV file, only uses the columns with student names and ID
+    df2 = pd.read_csv('students.csv', usecols=[0, 1])
 
     # Calculates the mean of selected rows
     row_averages = df.mean(axis=1)
