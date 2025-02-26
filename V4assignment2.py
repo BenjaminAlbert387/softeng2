@@ -18,7 +18,7 @@ def OptionFunction():
 
 def ReturnFunction():
     print("Typing no will return you back to the menu")
-    return_user_input = input("Do you want to find another student? Or module? ").lower()
+    return_user_input = input("Do you want to find something else, student or module? ").lower()
 
     if return_user_input == "student":
         SearchStudentFunction()
