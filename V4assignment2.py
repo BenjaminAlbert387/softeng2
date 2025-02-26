@@ -16,7 +16,7 @@ def OptionFunction():
         print("Invalid option. Please try again.")
         OptionFunction()
 
-def main():
+def SearchStudentFunction():
     user_input = input("Enter the student ID you wish to search for: ")
 
     # open() opens the CSV file to be used
@@ -64,9 +64,9 @@ def main():
 
         if not found:
             print("Invalid ID! Please try again.")
-            main()
+            SearchStudentFunction()
 
-def main2():
+def SearchModuleFunction():
     class StudentModuleFilter:
 
         # __init__() is used to initalise a class
@@ -139,22 +139,22 @@ def main2():
         print(filtered_students)
     else:
         print(f"Could not find modules with module code {module_code}")
-        main2()
+        SearchModuleFunction()
 
 def OptionTwoFunction():
     print("Type students or modules.")
     second_option = input("Do you want the average of all students or all modules? ")
 
     if second_option == "students":
-        main3()
+        StudentAveragesFunction()
     elif second_option == "modules":
-        main4()
+        ModuleAveragesFunction()
     else:
         print("")
         print("Invalid option. Please try again.")
         OptionTwoFunction()
 
-def main3():
+def StudentAveragesFunction():
     # Reads in the CSV file, only using columns with grades
     df = pd.read_csv('students.csv',usecols=[3, 5, 7, 9])
 
@@ -173,7 +173,7 @@ def main3():
     # Also removes the header from the the output (BioData41, 2022)
     print(df3.to_string(header=False))
 
-def main4():
+def ModuleAveragesFunction():
     # Reads in the CSV file, only using columns with grades
     df = pd.read_csv('students.csv',usecols=[3, 5, 7, 9])
 
