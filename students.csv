@@ -1,0 +1,7 @@
+userid,name,does_PR(19901),PR_grade(19901),does_ET(19902),ET_grade(19902),does_MA(19903),MA_grade(19903),does_FC(19904),FC_grade(19904), 
+1001,Alice,yes,74,yes,85,yes,66,no,,
+1002,Bob,yes,45,no,,yes,51,yes,69
+1003,Charlie,yes,51,yes,70,no,,yes,65
+1004,Dave,no,,yes,62,yes,47,yes,50
+1005,Eddy,yes,66,yes,77,yes,44,yes,59
+1006,Charlie,no,,no,,yes,80,yes,41
