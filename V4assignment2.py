@@ -85,9 +85,9 @@ def SearchStudentFunction():
                 break
             
 
-            if not found:
-                print("Invalid ID! Please try again.")
-                SearchStudentFunction()
+        if not found:
+            print("Invalid ID! Please try again.")
+            SearchStudentFunction()
 
 def SearchModuleFunction():
     class StudentModuleFilter:
