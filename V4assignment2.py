@@ -196,6 +196,7 @@ def StudentAveragesFunction():
     # Removes the 'dtype: float64' from the output (warkitty, 2019)
     # Also removes the header from the the output (BioData41, 2022)
     print(df3.to_string(header=False))
+    ReturnFunction()
 
 def ModuleAveragesFunction():
     # Reads in the CSV file, only using columns with grades
@@ -208,6 +209,7 @@ def ModuleAveragesFunction():
 
     # Removes the 'dtype: float64' from the output (warkitty, 2019)
     print(column_averages.to_string())
+    ReturnFunction()
 
 # Runs the OptionFunction() when the program starts 
 if __name__ == "__main__":
