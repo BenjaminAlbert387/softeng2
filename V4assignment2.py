@@ -84,7 +84,6 @@ def SearchStudentFunction():
                 ReturnFunction()
                 break
             
-
         if not found:
             print("Invalid ID! Please try again.")
             SearchStudentFunction()
