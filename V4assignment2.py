@@ -53,7 +53,7 @@ def SearchStudentFunction():
 
         for row in reader:
             if row[0] == user_input.strip():
-                print(row)
+                #print(row)
                 print(f"Name: {row[1]}")
 
                 print(f"Registered for programming module? {row[2]}")
