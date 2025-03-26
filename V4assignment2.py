@@ -6,13 +6,13 @@ def OptionFunction():
     print("Type students, modules or averages. Type quit to end the program.")
     first_option = input("Do you want to search students, modules or averages? ").lower()
 
-    if first_option == "students":
+    if first_option.strip() == "students":
         SearchStudentFunction()
-    elif first_option == "modules":
+    elif first_option.strip() == "modules":
         SearchModuleFunction()
-    elif first_option == "averages":
+    elif first_option.strip() == "averages":
         OptionTwoFunction()
-    elif first_option == "quit":
+    elif first_option.strip() == "quit":
         sys.exit()
     else:
         print("")
@@ -52,8 +52,8 @@ def SearchStudentFunction():
         found = False  # Flag to check if the ID was found
 
         for row in reader:
-            if row[0] == user_input:
-                print(row)
+            if row[0] == user_input.strip():
+                #print(row)
                 print(f"Name: {row[1]}")
 
                 print(f"Registered for programming module? {row[2]}")
@@ -84,10 +84,9 @@ def SearchStudentFunction():
                 ReturnFunction()
                 break
             
-
-            if not found:
-                print("Invalid ID! Please try again.")
-                SearchStudentFunction()
+        if not found:
+            print("Invalid ID! Please try again.")
+            SearchStudentFunction()
 
 def SearchModuleFunction():
     class StudentModuleFilter:
@@ -169,9 +168,9 @@ def OptionTwoFunction():
     print("Type students or modules.")
     second_option = input("Do you want the average of all students or all modules? ").lower()
 
-    if second_option == "students":
+    if second_option.strip() == "students":
         StudentAveragesFunction()
-    elif second_option == "modules":
+    elif second_option.strip() == "modules":
         ModuleAveragesFunction()
     else:
         print("")
@@ -196,6 +195,7 @@ def StudentAveragesFunction():
     # Removes the 'dtype: float64' from the output (warkitty, 2019)
     # Also removes the header from the the output (BioData41, 2022)
     print(df3.to_string(header=False))
+    ReturnFunction()
 
 def ModuleAveragesFunction():
     # Reads in the CSV file, only using columns with grades
@@ -208,6 +208,7 @@ def ModuleAveragesFunction():
 
     # Removes the 'dtype: float64' from the output (warkitty, 2019)
     print(column_averages.to_string())
+    ReturnFunction()
 
 # Runs the OptionFunction() when the program starts 
 if __name__ == "__main__":
