@@ -45,7 +45,7 @@ def SearchStudentFunction():
     # newline='': Matches the same format as the CSV file
     # mode='r': File is read only
 
-    with open('students.csv', newline='', mode='r') as csvfile:
+    with open('students.csv', newline='', mode='r') as csvfile: #(Ricky, 2020)
         reader = csv.reader(csvfile)
         next(reader, None)  # Skips the header row of the CSV file
 
@@ -98,7 +98,7 @@ def SearchModuleFunction():
         # csv_file: The students_csv file 
 
         def __init__(self, csv_file):
-            # Initialize the class with the CSV file and read it into a DataFrame
+            # Initialize the class with the CSV file and read it into a DataFrame (Ajax1234, 2017)
             self.df = pd.read_csv(csv_file)
             # Remove white space from column names
             self.df.columns = self.df.columns.str.strip()
@@ -213,3 +213,11 @@ def ModuleAveragesFunction():
 # Runs the OptionFunction() when the program starts 
 if __name__ == "__main__":
     OptionFunction()
+
+# References (Code Specific)
+# warkitty (2019) ‘Answer to “How do I remove name and dtype from pandas output”’, Stack Overflow. Available at: https://stackoverflow.com/a/59182999 (Accessed: 25 February 2025).
+# Ajax1234 (2017) ‘Answer to “How to read the contents of a csv file into a class with each csv row as a class instance”’, Stack Overflow. Available at: https://stackoverflow.com/a/47445846 (Accessed: 24 February 2025).
+# BioData41 (2022) ‘Answer to “How to remove Header Row from DataFrame Output”’, Stack Overflow. Available at: https://stackoverflow.com/a/70546756 (Accessed: 25 February 2025).
+# Ricky (2020) ‘Answer to “What does the argument newline=’’ do in the open function?”’, Stack Overflow. Available at: https://stackoverflow.com/a/61861566 (Accessed: 24 February 2025).
+
+
